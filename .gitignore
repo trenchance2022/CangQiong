@@ -4,3 +4,5 @@
 *.class
 *Test.java
 **/test/
+/sky.sql
+/数据库设计文档.md
