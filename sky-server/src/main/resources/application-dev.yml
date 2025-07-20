@@ -11,3 +11,8 @@ sky:
     bucket-name: sky-take-out-ren
     access-key-secret: 7nFhMpzit8a8iSsTZQnyQk8D7mevsS
     access-key-id: LTAI5tD6TsWVLfPuHuBDt15Q
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 10
