@@ -54,4 +54,6 @@ public interface DishMapper {
     List<Dish> getByName(String name);
 
     List<Dish> getByCategoryIdAndName(Long categoryId, String name);
+
+    List<Dish> list(Dish dish);
 }

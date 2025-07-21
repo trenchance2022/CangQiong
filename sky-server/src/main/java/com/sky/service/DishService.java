@@ -29,4 +29,6 @@ public interface DishService {
     List<Dish> getByName(String name);
 
     List<Dish> getByCategoryIdAndName(Long categoryId, String name);
+
+    List<DishVO> listWithFlavor(Dish dish);
 }
