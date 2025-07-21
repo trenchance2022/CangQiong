@@ -1,5 +1,7 @@
 package com.sky.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sky.json.JacksonObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,10 +24,12 @@ public class RedisConfiguration {
         // 设置redis key的序列化
         redisTemplate.setKeySerializer(new StringRedisSerializer());
 
-        // 使用Jackson做value的序列化
+        // 使用自定义的 ObjectMapper
+        ObjectMapper objectMapper = new JacksonObjectMapper();
         Jackson2JsonRedisSerializer<Object> jacksonSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
+        jacksonSerializer.setObjectMapper(objectMapper);
+        // 使用Jackson做value的序列化
         redisTemplate.setValueSerializer(jacksonSerializer);
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashValueSerializer(jacksonSerializer);
 
