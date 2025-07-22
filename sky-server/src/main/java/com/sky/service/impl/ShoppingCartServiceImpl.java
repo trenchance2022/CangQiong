@@ -60,4 +60,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         }
 
     }
+
+
+    public List<ShoppingCart> showShoppingCart() {
+        Long userId=BaseContext.getCurrentId();
+        ShoppingCart shoppingCart=ShoppingCart.builder()
+                .userId(userId)
+                .build();
+        return shoppingCartMapper.list(shoppingCart);
+    }
 }
