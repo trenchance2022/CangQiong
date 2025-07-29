@@ -43,7 +43,7 @@ public class ReportController {
             LocalDate begin,
             @DateTimeFormat(pattern = "yyyy-MM-dd")
             LocalDate end) {
-        return Result.success(reportService.getTurnover(begin, end));
+        return Result.success(reportService.getTurnoverStatistics(begin, end));
     }
 
     @GetMapping("/userStatistics")
